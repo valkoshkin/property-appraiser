@@ -64,6 +64,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     background-color: #fcfcfc;
+    padding-bottom: 48px;
 `;
 
 const FormWrapper = styled.div`
