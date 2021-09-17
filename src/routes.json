@@ -1,0 +1,4 @@
+{
+  "proxyUrl": "http://cors-anywhere.herokuapp.com/",
+  "serverUrl": "http://mrmarknike.pythonanywhere.com/"
+}

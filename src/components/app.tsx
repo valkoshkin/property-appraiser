@@ -1,22 +1,26 @@
 import React, { useCallback, useState } from 'react';
-import axios from 'axios';
 import styled from 'styled-components';
 import { Card, Menu } from 'antd';
 import { CarOutlined, HomeOutlined } from '@ant-design/icons';
 import PropertyAppraiserForm from './property-appraiser-form';
-import { PropertyAppraiserFormMode } from '../model/types';
+import {
+    PropertyAppraiserFormMode,
+    PropertyAppraiserFormModeType
+} from '../model/types';
 
 const App = () => {
-    const [mode, setMode] = useState<PropertyAppraiserFormMode>('car');
+    const [mode, setMode] = useState<PropertyAppraiserFormModeType>(
+        PropertyAppraiserFormMode.CAR
+    );
 
     // example of request
-    const sendRequest = useCallback(
-        async () =>
-            axios.get(
-                'http://cors-anywhere.herokuapp.com/http://mrmarknike.pythonanywhere.com/api/car/brands'
-            ),
-        []
-    );
+    // const sendRequest = useCallback(
+    //     async () =>
+    //         axios.get(
+    //             'http://cors-anywhere.herokuapp.com/http://mrmarknike.pythonanywhere.com/api/car/brands'
+    //         ),
+    //     []
+    // );
 
     const onMenuClick = useCallback((event) => {
         setMode(event.key);
