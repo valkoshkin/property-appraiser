@@ -94,32 +94,38 @@ const PropertyAppraiserForm = ({ mode }: PropertyAppraiserFormProps) => {
                 )}
             </Form>
             <InlineContainer>
-                <Button
-                    style={{
-                        backgroundColor: '#50b848',
-                        borderColor: '#50b848'
-                    }}
-                    type="primary"
-                    onClick={() => {
-                        setLoading(true);
-                        postDataToPath(`api/${mode}`, formValues[mode]).then(
-                            (response) => {
+                <div>
+                    <Button
+                        style={{
+                            backgroundColor: '#50b848',
+                            borderColor: '#50b848',
+                            marginRight: 24
+                        }}
+                        type="primary"
+                        onClick={() => {
+                            setLoading(true);
+                            postDataToPath(
+                                `api/${mode}`,
+                                formValues[mode]
+                            ).then((response) => {
                                 setResultValue(response.data.price);
                                 setLoading(false);
-                            }
-                        );
-                    }}
-                >
-                    Рассчитать стоимость
-                </Button>
-                <Spin spinning={isLoading} />
+                            });
+                        }}
+                    >
+                        Рассчитать стоимость
+                    </Button>
+                    <Spin spinning={isLoading} />
+                </div>
                 {resultValue && (
                     <ResultWrapper>
-                        <ResultLabel>Стоимость: </ResultLabel>
-                        {Intl.NumberFormat('ru-RU', {
-                            style: 'currency',
-                            currency: 'RUB'
-                        }).format(resultValue)}
+                        <span>
+                            {Intl.NumberFormat('ru-RU', {
+                                style: 'currency',
+                                currency: 'RUB',
+                                maximumFractionDigits: 0
+                            }).format(resultValue)}
+                        </span>
                     </ResultWrapper>
                 )}
             </InlineContainer>
@@ -135,19 +141,14 @@ const Container = styled.div`
 const InlineContainer = styled.div`
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-top: 16px;
-    > *:not(:last-child) {
-        margin-right: 24px;
-    }
 `;
 
 const ResultWrapper = styled.div`
-    font-size: 16px;
+    font-size: 20px;
     display: flex;
     white-space: pre-wrap;
-`;
-
-const ResultLabel = styled.span`
     font-weight: bold;
 `;
 

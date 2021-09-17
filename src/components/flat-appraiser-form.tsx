@@ -159,7 +159,7 @@ const FlatAppraiserForm = ({
                 </StyledFormItem>
             </InlineContainer>
             <Form.Item>
-                <Switch
+                <StyledSwitch
                     checked={isNotMiddleFloor}
                     onChange={setIsNotMiddleFloor}
                 />
@@ -203,6 +203,12 @@ const Label = styled.span`
 
 const SwitchLabel = styled(Label)`
     margin-left: 12px;
+`;
+
+const StyledSwitch = styled(Switch)`
+    &.ant-switch-checked {
+        background-color: #50b848 !important;
+    }
 `;
 
 export default FlatAppraiserForm;

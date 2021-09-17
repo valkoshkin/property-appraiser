@@ -68,7 +68,7 @@ const Container = styled.div`
 
 const FormWrapper = styled.div`
     padding: 24px 0;
-    width: 60%;
+    width: 45%;
 `;
 
 const Header = styled.div`
