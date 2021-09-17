@@ -1,6 +1,6 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Button, Form } from 'antd';
+import { Button, Form, Spin } from 'antd';
 import axios from 'axios';
 import {
     Car,
@@ -46,6 +46,8 @@ const PropertyAppraiserForm = ({ mode }: PropertyAppraiserFormProps) => {
             kremlin_km: [0]
         }
     });
+    const [isLoading, setLoading] = useState<boolean>(false);
+    const [resultValue, setResultValue] = useState<number | null>(null);
 
     const getDataFromPath = useCallback(async (path: string) => {
         return axios.get(`${serverUrl}${path}`);
@@ -65,6 +67,10 @@ const PropertyAppraiserForm = ({ mode }: PropertyAppraiserFormProps) => {
                 }
             }));
     }, []);
+
+    useEffect(() => {
+        setResultValue(null);
+    }, [formValues]);
 
     return (
         <Container>
@@ -87,15 +93,29 @@ const PropertyAppraiserForm = ({ mode }: PropertyAppraiserFormProps) => {
                     />
                 )}
             </Form>
-            <Button
-                onClick={() => {
-                    postDataToPath('api/car', formValues.car).then((response) =>
-                        console.log(response)
-                    );
-                }}
-            >
-                SEND
-            </Button>
+            <InlineContainer>
+                <Button
+                    type="primary"
+                    onClick={() => {
+                        setLoading(true);
+                        postDataToPath(`api/${mode}`, formValues[mode]).then(
+                            (response) => {
+                                setResultValue(response.data.price);
+                                setLoading(false);
+                            }
+                        );
+                    }}
+                >
+                    Рассчитать стоимость
+                </Button>
+                <Spin spinning={isLoading} />
+                {resultValue && (
+                    <ResultWrapper>
+                        <ResultLabel>Стоимость:</ResultLabel>
+                        {` ${resultValue} рублей`}
+                    </ResultWrapper>
+                )}
+            </InlineContainer>
         </Container>
     );
 };
@@ -103,6 +123,24 @@ const PropertyAppraiserForm = ({ mode }: PropertyAppraiserFormProps) => {
 const Container = styled.div`
     height: 100%;
     width: 100%;
+`;
+
+const InlineContainer = styled.div`
+    display: flex;
+    align-items: center;
+    > *:not(:last-child) {
+        margin-right: 24px;
+    }
+`;
+
+const ResultWrapper = styled.div`
+    font-size: 16px;
+    display: flex;
+    white-space: pre-wrap;
+`;
+
+const ResultLabel = styled.span`
+    font-weight: bold;
 `;
 
 export default PropertyAppraiserForm;

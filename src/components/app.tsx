@@ -56,7 +56,6 @@ const App = () => {
 
 const Container = styled.div`
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,7 +112,7 @@ const ImageWrapper = styled.div`
 const StyledLogo = styled(CentInvestLogo)`
     width: 96px;
     height: 96px;
-    transform: scale(2);
+    transform: scale(1.5);
 `;
 
 export default App;
