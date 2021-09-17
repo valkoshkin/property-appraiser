@@ -57,6 +57,7 @@ const FlatAppraiserForm = ({
                 <StyledFormItem>
                     <Label>Общая площадь</Label>
                     <InputNumber
+                        placeholder="Укажите общую площадь квартиры"
                         min={1}
                         max={999999}
                         onChange={(value) => {
@@ -67,6 +68,7 @@ const FlatAppraiserForm = ({
                 <StyledFormItem>
                     <Label>Жилая площадь</Label>
                     <InputNumber
+                        placeholder="Укажите жилую площадь квартиры"
                         min={1}
                         max={999999}
                         onChange={(value) => {
@@ -77,6 +79,7 @@ const FlatAppraiserForm = ({
                 <StyledFormItem>
                     <Label>Площадь кухни</Label>
                     <InputNumber
+                        placeholder="Укажите площадь кухни"
                         min={1}
                         max={999999}
                         onChange={(value) => {
@@ -105,6 +108,7 @@ const FlatAppraiserForm = ({
                 <StyledFormItem>
                     <Label>Пешком до ближайшей станции метро, мин</Label>
                     <InputNumber
+                        placeholder="Укажите время до ближайшей станции метро"
                         min={1}
                         max={180}
                         onChange={(value) => {
@@ -115,6 +119,7 @@ const FlatAppraiserForm = ({
                 <StyledFormItem>
                     <Label>Расстояние до центра, км</Label>
                     <InputNumber
+                        placeholder="Укажите расстояние до центра Москвы"
                         min={0}
                         max={100}
                         onChange={(value) => {
@@ -144,6 +149,7 @@ const FlatAppraiserForm = ({
                 <StyledFormItem>
                     <Label>Количество комнат</Label>
                     <InputNumber
+                        placeholder="Укажите околичество комнат"
                         min={1}
                         max={30}
                         onChange={(value) => {

@@ -94,7 +94,7 @@ const PropertyAppraiserForm = ({ mode }: PropertyAppraiserFormProps) => {
                 )}
             </Form>
             <InlineContainer>
-                <Button
+                <StyledButton
                     type="primary"
                     onClick={() => {
                         setLoading(true);
@@ -107,7 +107,7 @@ const PropertyAppraiserForm = ({ mode }: PropertyAppraiserFormProps) => {
                     }}
                 >
                     Рассчитать стоимость
-                </Button>
+                </StyledButton>
                 <Spin spinning={isLoading} />
                 {resultValue && (
                     <ResultWrapper>
@@ -131,6 +131,10 @@ const InlineContainer = styled.div`
     > *:not(:last-child) {
         margin-right: 24px;
     }
+`;
+
+const StyledButton = styled(Button)`
+    margin-top: 10px;
 `;
 
 const ResultWrapper = styled.div`

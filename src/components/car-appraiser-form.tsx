@@ -224,7 +224,7 @@ const CarAppraiserForm = ({
                 <StyledFormItem>
                     <Label>Год выпуска</Label>
                     <DatePicker
-                        placeholder="Год выпуска"
+                        placeholder="Укажите год выпуска"
                         onChange={(value) => {
                             value &&
                                 setFormValues((prevFormValues: any) => ({
@@ -239,8 +239,9 @@ const CarAppraiserForm = ({
                     />
                 </StyledFormItem>
                 <StyledFormItem>
-                    <Label>Пробег</Label>
+                    <Label>Пробег, км</Label>
                     <InputNumber
+                        placeholder="Укажите пробег"
                         min={1}
                         max={999999}
                         onChange={(value) => {
@@ -251,6 +252,7 @@ const CarAppraiserForm = ({
                 <StyledFormItem>
                     <Label>Число владельцев</Label>
                     <InputNumber
+                        placeholder="Укажите число владельцев"
                         min={1}
                         max={10}
                         onChange={(value) => {
@@ -261,8 +263,9 @@ const CarAppraiserForm = ({
             </InlineContainer>
             <InlineContainer>
                 <StyledFormItem>
-                    <Label>Объем двигателя</Label>
+                    <Label>Объем двигателя, л</Label>
                     <InputNumber
+                        placeholder="Укажите объем двигателя"
                         min={0.5}
                         max={9}
                         onChange={(value) => {
@@ -271,8 +274,9 @@ const CarAppraiserForm = ({
                     />
                 </StyledFormItem>
                 <StyledFormItem>
-                    <Label>Мощность двигателя</Label>
+                    <Label>Мощность двигателя, л.с.</Label>
                     <InputNumber
+                        placeholder="Укажите мощность двигателя"
                         min={18}
                         max={720}
                         onChange={(value) => {
@@ -285,6 +289,7 @@ const CarAppraiserForm = ({
                 <StyledFormItem>
                     <Label>Тип кузова</Label>
                     <Select
+                        placeholder="Выберите тип кузова"
                         optionLabelProp="label"
                         options={bodyTypesArray}
                         onChange={(value) => {
@@ -295,6 +300,7 @@ const CarAppraiserForm = ({
                 <StyledFormItem>
                     <Label>Тип топлива</Label>
                     <Select
+                        placeholder="Выберите тип топлива"
                         optionLabelProp="label"
                         options={fuelTypesArray}
                         onChange={(value) => {
@@ -307,6 +313,7 @@ const CarAppraiserForm = ({
                 <StyledFormItem>
                     <Label>Коробка передач</Label>
                     <Select
+                        placeholder="Выберите коробку передач"
                         optionLabelProp="label"
                         options={transmissionTypesArray}
                         onChange={(value) => {
@@ -317,6 +324,7 @@ const CarAppraiserForm = ({
                 <StyledFormItem>
                     <Label>Привод</Label>
                     <Select
+                        placeholder="Выберите привод"
                         optionLabelProp="label"
                         options={driveTypesArray}
                         onChange={(value) => {
