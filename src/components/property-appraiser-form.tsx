@@ -13,7 +13,7 @@ import FlatAppraiserForm from './flat-appraiser-form';
 
 const urlConfig = require('../routes.json');
 
-const { proxyUrl, serverUrl } = urlConfig;
+const { serverUrl } = urlConfig;
 
 interface PropertyAppraiserFormProps {
     mode: PropertyAppraiserFormModeType;
@@ -48,11 +48,11 @@ const PropertyAppraiserForm = ({ mode }: PropertyAppraiserFormProps) => {
     });
 
     const getDataFromPath = useCallback(async (path: string) => {
-        return axios.get(`${proxyUrl}${serverUrl}${path}`);
+        return axios.get(`${serverUrl}${path}`);
     }, []);
 
     const postDataToPath = useCallback((path, data) => {
-        return axios.post(`${proxyUrl}${serverUrl}${path}`, data);
+        return axios.post(`${serverUrl}${path}`, data);
     }, []);
 
     const onChangeHandler = useCallback((value, parameter, entity) => {
