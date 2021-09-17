@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/property-appraiser/precache-manifest.bb91882079c7d96462e91bc8df7d860e.js"
+  "/property-appraiser/precache-manifest.b25ba2ee197a04fc11ffe97ef18e99c9.js"
 );
 
 self.addEventListener('message', (event) => {
