@@ -1,13 +1,13 @@
 export interface Flat {
-    readonly totalSpace: number[];
-    readonly livingSpace: number[];
-    readonly isMiddleFloor: number[];
-    readonly buildYear: number[];
-    readonly numRoom: number[];
-    readonly kitchenSpace: number[];
-    readonly subArea: number[];
-    readonly metroMinWalk: number[];
-    readonly kremlinKm: number[];
+    readonly total_space: number[];
+    readonly living_space: number[];
+    readonly is_middle_floor: number[];
+    readonly build_year: number[];
+    readonly num_room: number[];
+    readonly kitchen_space: number[];
+    readonly sub_area: number[];
+    readonly metro_min_walk: number[];
+    readonly kremlin_km: number[];
 }
 
 export interface Car {
@@ -38,5 +38,10 @@ export interface CarBrand {
 
 export interface CarModel {
     readonly model: string;
+    readonly id: number;
+}
+
+export interface Area {
+    readonly name: string;
     readonly id: number;
 }

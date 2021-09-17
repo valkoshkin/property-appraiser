@@ -12,4 +12,11 @@ const formatCarModels = (carModelsArray: any) => {
     }));
 };
 
-export { formatCarBrands, formatCarModels };
+const formatFlatAreas = (areasArray: any) => {
+    return areasArray.map((element: (string | number)[]) => ({
+        name: element[0],
+        id: element[1]
+    }));
+};
+
+export { formatCarBrands, formatCarModels, formatFlatAreas };

@@ -9,6 +9,7 @@ import {
     PropertyAppraiserFormModeType
 } from '../model/types';
 import CarAppraiserForm from './car-appraiser-form';
+import FlatAppraiserForm from './flat-appraiser-form';
 
 const urlConfig = require('../routes.json');
 
@@ -34,15 +35,15 @@ const PropertyAppraiserForm = ({ mode }: PropertyAppraiserFormProps) => {
             owners_count: [0]
         },
         flat: {
-            totalSpace: [0],
-            livingSpace: [0],
-            isMiddleFloor: [0],
-            buildYear: [0],
-            numRoom: [0],
-            kitchenSpace: [0],
-            subArea: [0],
-            metroMinWalk: [0],
-            kremlinKm: [0]
+            total_space: [0],
+            living_space: [0],
+            is_middle_floor: [0],
+            build_year: [0],
+            num_room: [0],
+            kitchen_space: [0],
+            sub_area: [0],
+            metro_min_walk: [0],
+            kremlin_km: [0]
         }
     });
 
@@ -77,7 +78,13 @@ const PropertyAppraiserForm = ({ mode }: PropertyAppraiserFormProps) => {
                         }
                     />
                 ) : (
-                    <>flat</>
+                    <FlatAppraiserForm
+                        getDataFromPath={getDataFromPath}
+                        setFormValues={setFormValues}
+                        onChangeHandler={(value, parameter) =>
+                            onChangeHandler(value, parameter, 'flat')
+                        }
+                    />
                 )}
             </Form>
             <Button
