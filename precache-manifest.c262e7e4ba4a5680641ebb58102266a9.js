@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "639188fddcc863115bbbf8ede9332e5e",
+    "revision": "79b9c2cddeffa8120c95a647e0691214",
     "url": "/property-appraiser/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/property-appraiser/static/css/2.f6ed3ac0.chunk.css"
   },
   {
-    "revision": "4dd7038a0ff7aa306da8",
+    "revision": "4143f2b08e92e051e7d1",
     "url": "/property-appraiser/static/css/main.8bef154b.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/property-appraiser/static/js/2.6f979825.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4dd7038a0ff7aa306da8",
-    "url": "/property-appraiser/static/js/main.22e0aee5.chunk.js"
+    "revision": "4143f2b08e92e051e7d1",
+    "url": "/property-appraiser/static/js/main.53248e66.chunk.js"
   },
   {
     "revision": "a9242fa8895460bfde88",
