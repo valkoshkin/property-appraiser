@@ -27,7 +27,7 @@ const App = () => {
             </Header>
             <SubHeader>
                 <InfoPanel>
-                    <InfoPanelTitle>сколько стоит ... ?</InfoPanelTitle>
+                    <InfoPanelTitle>СКОЛЬКО СТОИТ ... ?</InfoPanelTitle>
                     <InfoPanelText>
                         Выберите тип и укажите параметры имущества, а система
                         определит его рыночную стоимость с помощью машинного
@@ -76,7 +76,7 @@ const Header = styled.div`
 const SubHeader = styled.div`
     background-color: #fff;
     width: 100%;
-    padding: 32px 48px;
+    padding: 32px 150px;
     display: flex;
     justify-content: space-between;
 `;
@@ -104,7 +104,7 @@ const ImageWrapper = styled.div`
     display: flex;
     justify-content: center;
     > img {
-        width: 45%;
+        width: 50%;
         height: auto;
     }
 `;
