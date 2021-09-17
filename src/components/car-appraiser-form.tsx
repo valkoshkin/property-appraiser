@@ -197,7 +197,8 @@ const CarAppraiserForm = ({
                             (element) => element.brand === value
                         );
                         setSelectedCarBrand(newSelectedCarBrand);
-                        !newSelectedCarBrand && setSelectedCarModel(undefined);
+                        !newSelectedCarBrand &&
+                            setSelectedCarModel({ model: '', id: 0 });
                     }}
                 />
             </StyledFormItem>
@@ -207,7 +208,7 @@ const CarAppraiserForm = ({
                     placeholder="Выберите модель"
                     disabled={!selectedCarBrand}
                     filterOption
-                    value={selectedCarModel?.model || ''}
+                    value={selectedCarModel?.model}
                     options={carModels?.map((element: CarModel) => ({
                         value: element.model
                     }))}
