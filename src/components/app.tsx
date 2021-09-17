@@ -16,7 +16,7 @@ const App = () => {
         PropertyAppraiserFormMode.CAR
     );
 
-    const onChangeChandler = useCallback((event) => {
+    const onChangeHandler = useCallback((event) => {
         setMode(event.target.value);
     }, []);
 
@@ -37,10 +37,14 @@ const App = () => {
                     <Radio.Group
                         size="large"
                         defaultValue="car"
-                        onChange={onChangeChandler}
+                        onChange={onChangeHandler}
                     >
-                        <Radio.Button value="car">Автомобиль</Radio.Button>
-                        <Radio.Button value="flat">Квартира</Radio.Button>
+                        <StyledRadioButton value="car">
+                            Автомобиль
+                        </StyledRadioButton>
+                        <StyledRadioButton value="flat">
+                            Квартира
+                        </StyledRadioButton>
                     </Radio.Group>
                 </InfoPanel>
                 <ImageWrapper>
@@ -113,6 +117,39 @@ const StyledLogo = styled(CentInvestLogo)`
     width: 96px;
     height: 96px;
     transform: scale(1.5);
+`;
+
+const StyledRadioButton = styled(Radio.Button)`
+    &.ant-radio-button-wrapper {
+        :hover {
+            border-color: #50b848;
+        }
+        &.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover {
+            color: #50b848;
+            border-color: #50b848;
+        }
+        &.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):focus-within {
+            -webkit-box-shadow: unset;
+            box-shadow: unset;
+        }
+        &.ant-radio-button-wrapper-checked:not([class*=' ant-radio-button-wrapper-disabled']).ant-radio-button-wrapper:first-child {
+            border-right-color: #50b848;
+        }
+        :not(.ant-radio-button-wrapper-disabled):hover {
+            color: #50b848;
+        }
+        .ant-radio-button-wrapper-disabled {
+            border-left-color: #d9d9d9;
+        }
+        &-checked,
+        &-checked:first-child {
+            color: #50b848;
+            border-color: #50b848;
+            &:before {
+                background-color: #50b848;
+            }
+        }
+    }
 `;
 
 export default App;

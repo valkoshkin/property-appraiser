@@ -70,7 +70,7 @@ const PropertyAppraiserForm = ({ mode }: PropertyAppraiserFormProps) => {
 
     useEffect(() => {
         setResultValue(null);
-    }, [formValues]);
+    }, [mode]);
 
     return (
         <Container>
@@ -95,6 +95,10 @@ const PropertyAppraiserForm = ({ mode }: PropertyAppraiserFormProps) => {
             </Form>
             <InlineContainer>
                 <Button
+                    style={{
+                        backgroundColor: '#50b848',
+                        borderColor: '#50b848'
+                    }}
                     type="primary"
                     onClick={() => {
                         setLoading(true);
@@ -111,8 +115,11 @@ const PropertyAppraiserForm = ({ mode }: PropertyAppraiserFormProps) => {
                 <Spin spinning={isLoading} />
                 {resultValue && (
                     <ResultWrapper>
-                        <ResultLabel>Стоимость:</ResultLabel>
-                        {` ${resultValue} рублей`}
+                        <ResultLabel>Стоимость: </ResultLabel>
+                        {Intl.NumberFormat('ru-RU', {
+                            style: 'currency',
+                            currency: 'RUB'
+                        }).format(resultValue)}
                     </ResultWrapper>
                 )}
             </InlineContainer>
