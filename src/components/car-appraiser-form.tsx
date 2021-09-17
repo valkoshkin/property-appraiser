@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { AutoComplete, DatePicker, Form, InputNumber, Select } from 'antd';
 import { AxiosResponse } from 'axios';
+import moment from 'moment';
 import { CarBrand, CarModel } from '../model/types';
 import { formatCarBrands, formatCarModels } from '../utils/utils';
 
@@ -225,6 +226,9 @@ const CarAppraiserForm = ({
                 <StyledFormItem>
                     <Label>Год выпуска</Label>
                     <DatePicker
+                        disabledDate={(current) =>
+                            current && current > moment().endOf('year')
+                        }
                         placeholder="Укажите год выпуска"
                         onChange={(value) => {
                             value &&
